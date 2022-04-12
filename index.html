@@ -71,7 +71,9 @@
         <div class="container">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
 
-          <button class="order-button" type="button">Заказать услугу</button>
+          <button class="order-button" data-modal-open type="button">
+            Заказать услугу
+          </button>
         </div>
       </section>
 
@@ -161,6 +163,9 @@
                 src="./images/work/work1.jpg"
                 alt="Создание проекта"
               />
+              <p class="what-we-do_description join-us__box-title">
+                Десктопные приложения
+              </p>
             </li>
 
             <li class="what-we-do-item">
@@ -170,6 +175,9 @@
                 src="./images/work/work2.jpg"
                 alt="Оптимизация проекта"
               />
+              <p class="what-we-do_description join-us__box-title">
+                Мобильные приложения
+              </p>
             </li>
 
             <li class="what-we-do-item">
@@ -179,6 +187,9 @@
                 src="./images/work/work3.jpg"
                 alt="Индивидуальный подход к проекту"
               />
+              <p class="join-us__box-title what-we-do_description">
+                Дизайнерские решения/p>
+              </p>
             </li>
           </ul>
         </div>
@@ -491,5 +502,15 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop" data-modal>
+      <div class="modal">
+        <button class="modal-close-btn" data-modal-close type="button">
+          <svg height="18" width="18" class="close-btn-icon">
+            <use href="./images/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

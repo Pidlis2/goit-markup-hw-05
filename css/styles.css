@@ -81,9 +81,6 @@ body {
   font-family: 'roboto', sans-serif;
   color: var(--first_color-txt);
 }
-.active {
-  color: var(--button-accent-color);
-}
 
 .container {
   width: 1200px;
@@ -113,6 +110,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-top: 16px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-link:focus,
 .social-link:hover{
@@ -121,7 +119,7 @@ outline: none;
 }
 .social-icon,
 .our-clients-item{
-  fill: #AFB1B8
+  fill: #AFB1B8;
 }
 .social-link:hover .social-icon,
 .social-link:focus .social-icon,
@@ -168,6 +166,8 @@ header {
   letter-spacing: 0.02em;
   padding-top: 32px;
   padding-bottom: 32px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 .nav-item:not(:last-child) {
   margin-right: var(--first-retreat);
@@ -191,6 +191,7 @@ header {
   font-weight: var(--third_font-weight);
   font-size: var(--main_font-size);
   line-height: 1.14;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mail-inf-link:hover,
@@ -210,7 +211,6 @@ header {
  border-color: var(--button-accent-color);
  outline: none;
 }
-
 .active {
   color: var(--button-accent-color);
 }
@@ -218,6 +218,7 @@ header {
   vertical-align: middle;
   margin-right: 10px;
   fill:var(--secondary_color-txt);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   
 }
   
@@ -258,11 +259,10 @@ header {
   background-color: var(--button-accent-color);
   color: var(--third_color-txt);
   padding: 10px 32px;
-  
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
   border: none;
-  
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .order-button:hover,
 .order-button:focus{
@@ -326,11 +326,22 @@ padding: 25px 100px;
   
 }
 .what-we-do-item{
+  position: relative;
   margin-left: var(--seсondary-retreat);
   flex-basis: calc(100% / 3 - 30px);
 }
 .container .accent-title{
   margin-bottom: var(--first-retreat);
+}
+.what-we-do_description{
+  position: absolute;
+  width: 370px;
+  height: 70px;
+  background: rgba(47, 48, 58, 0.8);
+  left: 0;
+  bottom: 0;
+  padding: 27px 0px;
+ 
 }
 
 /*===end what we do section==*/
@@ -384,6 +395,7 @@ padding: 30px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*======our clients end=====*/
@@ -425,8 +437,9 @@ padding: 30px 0px;
   line-height: 1.14;
   letter-spacing: 0.03em;
   color: var(--third_color-txt);
+}
+.join-us__box .join-us__box-title{
   margin-bottom: 4px;
-
 }
 .join-us__box{
   width: 206px;
@@ -464,6 +477,9 @@ padding: 30px 0px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .products-button:hover,
 .products-button:focus {
@@ -510,7 +526,7 @@ padding: 30px 0px;
   margin-left:var(--seсondary-retreat);
   flex-basis: calc(100%/ 3 - 30px);
   margin-top: var(--seсondary-retreat);
-
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .products-card-item:hover,
 .products-card-item:focus{
@@ -525,6 +541,62 @@ padding: 30px 0px;
 }
 
 /*========end card portfolio======*/
+
+/*==========form==================*/
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop.is-hidden{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal{
+  width:528px;
+  height:581px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+ 
+  background: var(--third_color-txt);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+  0px 1px 1px rgba(0, 0, 0, 0.14),
+  0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close-btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 0;
+  margin-top: 8px;
+  margin-right: 8px;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus{
+  fill: var(--button-accent-color);
+  outline-color: var(--button-accent-color);
+}
+
+
+
 
 
 
