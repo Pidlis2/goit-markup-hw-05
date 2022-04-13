@@ -502,13 +502,43 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop" data-modal>
+    <div class="backdrop " data-modal>
       <div class="modal">
         <button class="modal-close-btn" data-modal-close type="button">
           <svg height="18" width="18" class="close-btn-icon">
             <use href="./images/sprite.svg#icon-close"></use>
           </svg>
         </button>
+        <form class="contact-form">
+
+          <p class="contact-form__title">Оставьте свои данные, мы вам перезвоним</p>
+
+          <label for="" class="contact-form-field">
+              Имя
+            <input type="text" name="user-name" class="contact-form-input">          <svg class="contact-form__input-icon" height="18" weight="18">
+            <use href="./images/sprite.svg#icon-person"></use>
+          </svg></label>
+              
+          <label for="" class="contact-form-field">
+              Телефон
+            <input type="tel" name="tel" class="contact-form-input"></label>
+
+          <label for="" class="contact-form-field">
+              Почта
+            <input type="email" name="email" class="contact-form-input"></label>
+
+          <label class="contact-form-field">
+              Комментарий
+            <textarea class="contact-form-input" name="coment"> </textarea>
+          </label>  
+          <div class="contact-form__acept-wrapper">
+          <input id="user-acept" type="checkbox">
+          <label for="user-acept">
+            <p>Соглашаюсь с рассылкой и принимаю</p>
+          </label>
+            <a href="">Условия договора</a>
+          </div>
+          <button type="submit" class="form-send__btn order-button">Отправить</button>
       </div>
     </div>
     <script src="./js/modal.js"></script>
